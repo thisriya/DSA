@@ -51,4 +51,25 @@ vector<int> mergeSortedArrays(vector<int>& arr1, vector<int>& arr2) {
     return merged;
 }
 
+//BUBBLE SORT
+    void swap(int &a,int &b){
+        int t=a;
+        a=b;
+        b=t;
+    }
+    void bubbleSort(int arr[], int n) {
+        bool swaping=false;
+        for(int i=0;i<n;i++){
+            for(int j=0;j<n-i-1;j++){
+                if(arr[j]>arr[j+1]){
+                    swap(arr[j],arr[j+1]);
+                    swaping=true;
+                }
+            }
+             if(swaping==false) {
+                break;
+            }
+        }
+           
+    }
 
