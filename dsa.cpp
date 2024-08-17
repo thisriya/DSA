@@ -73,3 +73,21 @@ vector<int> mergeSortedArrays(vector<int>& arr1, vector<int>& arr2) {
            
     }
 
+
+//MAXIMUM PRODUCT SUBARRAY
+	long long maxProduct(vector<int> arr, int n) {
+    long long maxProduct = arr[0], minProduct = arr[0], result = arr[0];
+
+    for (int i = 1; i < n; i++) {
+        if (arr[i] < 0) {
+            swap(maxProduct, minProduct);
+        }
+        maxProduct = max((long long)arr[i], maxProduct * arr[i]);
+        minProduct = min((long long)arr[i], minProduct * arr[i]);
+
+        // Update the result to be the maximum of maxProduct and result
+        result = max(result, maxProduct);
+    }
+
+    return result;
+	}
