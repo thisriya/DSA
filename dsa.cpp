@@ -289,3 +289,17 @@ class Solution
         return (r1->data == r2->data) && isIdentical(r1->left,r2->left) && isIdentical(r1->right,r2->right);
     }
 };
+
+
+// INDENTICAL MATRICES
+    int areMatricesIdentical(int N, vector<vector<int>> Grid1,
+                             vector<vector<int>> Grid2) {
+        for(int i=0;i<N;i++){
+            for(int j=0;j<N;j++){
+                if(Grid1[i][j]!=Grid2[i][j]){
+                    return 0;
+                }
+            }
+        }
+        return 1;
+    }
