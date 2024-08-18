@@ -210,3 +210,27 @@ char* reverse(char *S, int len)
         }
         return r;
   }
+
+
+// REVERSE LINKED LIST
+struct Node
+{
+    int data;
+    struct Node *next;
+}
+
+class Solution {
+  public:
+    struct Node* reverseList(struct Node* head) {
+        struct Node* prev = nullptr;
+        struct Node* current = head;
+        struct Node* next = nullptr;
+        while (current != nullptr) {
+            next = current->next;  // Store the next node
+            current->next = prev;   // Reverse the current node's pointer
+            prev = current;         // Move the prev pointer forward
+            current = next;         // Move the current pointer forward
+        }
+    return prev;
+    }
+};
