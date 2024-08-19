@@ -395,3 +395,37 @@ class Solution {
         return c%2==0;
     }
 };
+
+
+// DISPLAY DOUBLY LINKED LIST
+struct Node
+{
+    int data;
+    Node * next;
+    Node * prev;
+    Node (int x)
+    {
+        data=x;
+        next=NULL;
+        prev=NULL;
+    }
+};
+vector<int> displayList(Node *head)
+{
+    vector<int> result1;
+    vector<int> result2;
+    Node* current=head;
+    Node* last=nullptr;
+    while(current!=nullptr){
+        result1.push_back(current->data);
+        last=current;
+        current=current->next;
+    }
+    current=last;
+     while(current!=nullptr){
+        result2.push_back(current->data);
+        current=current->prev;
+    }
+    return result1;
+    return result2;
+}
