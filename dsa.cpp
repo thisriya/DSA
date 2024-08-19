@@ -325,3 +325,24 @@ bool areIdentical(struct Node *head1, struct Node *head2) {
   }
   return head1==nullptr && head2==nullptr;
 }
+
+
+// COUNT NUMBER OF LINKED LISTS
+struct Node
+{
+    int data;
+    Node* next;
+    Node(int x) {  data = x;  next = NULL; }
+}; 
+class Solution {
+  public:
+    // Function to count nodes of a linked list.
+    int getCount(struct Node* head) {
+        int c=0;
+        while(head!=nullptr){
+            c++;
+            head=head->next;
+        }
+        return c;
+    }
+};
