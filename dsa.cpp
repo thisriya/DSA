@@ -369,3 +369,29 @@ class Solution {
         return head;
     }
 };
+
+
+// FIND IF LENGTH IS EVEN
+struct Node
+{
+    int data;
+    struct Node* next;
+
+    Node(int x){
+        data = x;
+        next = NULL;
+    }
+
+};
+class Solution {
+  public:
+    bool isLengthEven(struct Node **head) {
+        int c=0;
+        Node* current=*head;
+        while(current!=nullptr){
+            c++;
+            current=current->next;
+        }
+        return c%2==0;
+    }
+};
