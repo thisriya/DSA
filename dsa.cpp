@@ -345,3 +345,27 @@ class Solution {
         return c;
     }
 };
+
+
+// INSERT AT LAST
+struct Node {
+  int data;
+  struct Node * next;
+  Node(int x) {
+    data = x;
+    next = NULL;
+  }
+};
+class Solution {
+  public:
+    Node *insertAtEnd(Node *head, int x) {
+        Node* newnode= new Node(x);
+        if(head==nullptr) return newnode;
+        Node* curent=head;
+        while(curent->next!=nullptr){
+            curent=curent->next;
+        }
+        curent->next=newnode;
+        return head;
+    }
+};
