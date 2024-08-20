@@ -447,3 +447,33 @@ public:
 	}
 
 };
+
+
+// PAIRWISE CONSECUTIVE
+bool pairWiseConsecutive(stack<int> s)
+{
+   bool ans=true;
+   vector<int> elements;
+   stack<int> temp;
+   while(!s.empty()){
+       temp.push(s.top());
+       elements.push_back(s.top());
+       s.pop();
+   }
+   while(!temp.empty()){
+       s.push(temp.top());
+       temp.pop();
+   }
+   int n=elements.size();
+   if(n%2==1){
+    n--;
+   }
+   for(int i=0;i<n;i+=2){
+       if(elements[i]+1 != elements[i+1] && elements[i]-1 != elements[i+1]){
+           ans=false;
+           break;
+       }
+   }
+   
+   return ans;
+}
