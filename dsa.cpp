@@ -316,7 +316,7 @@ struct Node {
   }
 };
 bool areIdentical(struct Node *head1, struct Node *head2) {
-  while(head1!=nullptr & head2!=nullptr){
+  while(head1!=nullptr && head2!=nullptr){
       if(head1->data!=head2->data){
           return false;
       }
@@ -429,3 +429,21 @@ vector<int> displayList(Node *head)
     return result1;
     return result2;
 }
+
+
+// IMMEDIATE SMALLER NUMBER
+class Solution{
+public:	
+	void immediateSmaller(vector<int>&arr, int n) {
+	    for(int i=0;i<n;i++){
+	        if(arr[i]>arr[i+1]){
+	            arr[i]=arr[i+1];
+	        }
+	        else{
+	            arr[i]=-1;
+	        }
+	    }
+	    arr[n-1]=-1;
+	}
+
+};
