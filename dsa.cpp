@@ -500,3 +500,23 @@ void _pop(stack<int> s)
         s.pop();
     }
 }
+
+
+// DELETE THE MIDDLE ELEMENT OF STACK
+class Solution {
+  public:
+    // Function to delete middle element of a stack.
+    void deleteMid(stack<int>& s, int sizeOfStack) {
+        int pos=sizeOfStack/2;
+        stack<int> temp;
+        for(int i=0;i<pos;i++){
+            temp.push(s.top());
+            s.pop();
+        }
+        s.pop();
+        while(!temp.empty()){
+            s.push(temp.top());
+            temp.pop();
+        }
+    }
+};
