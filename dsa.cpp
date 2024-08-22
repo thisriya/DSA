@@ -545,3 +545,24 @@ class Solution {
         }
         return 0;
     }
+
+
+// SMALLEST POSITIVE MISSING NUMBER
+    int missingNumber(int arr[], int n) 
+    { 
+           for (int i = 0; i < n; i++) {
+            while (arr[i] > 0 && arr[i] <= n && arr[i] != arr[arr[i] - 1]) {
+                swap(arr[i], arr[arr[i] - 1]);
+            }
+        }
+        
+        // Step 2: Find the first index which doesn't have the correct element
+        for (int i = 0; i < n; i++) {
+            if (arr[i] != i + 1) {
+                return i + 1;
+            }
+        }
+        
+        // Step 3: If all elements are in their correct positions
+        return n + 1;
+    } 
