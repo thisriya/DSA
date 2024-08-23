@@ -566,3 +566,40 @@ class Solution {
         // Step 3: If all elements are in their correct positions
         return n + 1;
     } 
+
+
+// REMOVE DUPLICATE IN UNSORTED LINKED LIST
+struct Node {
+  int data;
+  struct Node *next;
+  Node(int x) {
+    data = x;
+    next = NULL;
+  }
+};
+class Solution {
+  public:
+    Node *removeDuplicates(Node *head) {
+           if (!head) return head; // If the list is empty, return immediately.
+
+        std::unordered_set<int> seen; // Set to store already seen values.
+        Node *current = head;
+        Node *prev = nullptr;
+
+        while (current != nullptr) {
+            if (seen.find(current->data) != seen.end()) {
+                // If current node's data is already seen, skip it.
+                prev->next = current->next;
+                delete current; // Optional: Free the memory of the duplicate node.
+                current = prev->next; // Move to the next node.
+            } else {
+                // If the current node's data is not seen, add it to the set.
+                seen.insert(current->data);
+                prev = current;
+                current = current->next;
+            }
+        }
+
+        return head;
+    }
+};
