@@ -629,4 +629,12 @@ bool valid(string s)
 }
 
 
-//
+//CHECK IF THE ELEMENT IS IN THE SERIES
+    int inSequence(int A, int B, int C){
+        //A first term, C common difference, B find if this term present;
+        if(A==B) return 1;
+        if(C==0) return 0;
+        if((B-A)%C==0 && (B-A)/C >=0) return 1;
+        return 0;
+    }
+
