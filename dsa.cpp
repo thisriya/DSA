@@ -638,3 +638,15 @@ bool valid(string s)
         return 0;
     }
 
+// COUNT THE NUMBER OF SETS (1) IN BINARY CONVERSION
+    int setBits(int n) {
+        int ans=0,i=0,c=0;
+        while(n!=0){
+            int bit=n&1;
+            if(bit==1) c++;
+            int ans=(bit * pow(10,i))+ans;
+            n=n>>1;
+            i++;
+        }
+        return c;
+    }
