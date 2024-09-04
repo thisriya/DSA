@@ -692,3 +692,22 @@ int getMin(stack<int>& s){
 }
 	return min;
 }
+
+
+// REMOVE THE ELEMENTS WITH THE DIFFERENT SIGN
+class Solution {
+  public:
+    vector<int> makeBeautiful(vector<int> arr) {
+        vector<int> result;
+       for (int num : arr) {
+        if (!result.empty() && (result.back() < 0) != (num < 0)) {
+            // If current number and the top of result have different signs, pop from result
+            result.pop_back();
+        } else {
+            // Otherwise, push the current number to result
+            result.push_back(num);
+        }
+    }
+        return result;
+    }
+};
