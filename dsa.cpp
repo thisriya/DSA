@@ -650,3 +650,45 @@ bool valid(string s)
         }
         return c;
     }
+
+// MINIMUM OF STACK
+#include<climits>
+void push(stack<int>& s, int a){
+	    s.push(a);
+	}
+
+bool isFull(stack<int>& s,int n){
+	if(s.size()==n){
+	    return true;
+	}
+	else{
+	    false;
+	}
+}
+
+bool isEmpty(stack<int>& s){
+	if(s.size()==0){
+	    return true;
+	}
+	else{
+	    return false;
+	}
+}
+
+int pop(stack<int>& s){
+	if(s.size()>=1){
+	    s.pop();
+	}
+}
+
+int getMin(stack<int>& s){
+	int min=INT_MAX;
+	while(!s.empty()){
+	int element=s.top();
+	if(element<min){
+	    min=element;
+	}
+	s.pop();
+}
+	return min;
+}
