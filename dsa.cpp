@@ -711,3 +711,49 @@ class Solution {
         return result;
     }
 };
+
+
+// GIVING THE MINIMUM OF THE STACK
+class Solution{
+    int minEle;
+    stack<int> s;
+    public:
+    int getMin() {
+    if (s.empty()) {
+        return -1; // Stack is empty, no minimum element
+    }
+
+    int min = INT_MAX;
+    stack<int> temp;  
+    while (!s.empty()) {
+        int element = s.top();
+        s.pop();
+        if (element < min) {
+            min = element;
+        }
+        temp.push(element);
+    }
+    while (!temp.empty()) {
+        s.push(temp.top());
+        temp.pop();
+    }
+
+    return min;
+}
+
+       /*returns poped element from stack*/
+       int pop(){
+           
+           if(s.empty()){
+               return -1;
+           }
+          int el=s.top();
+          s.pop();
+          return el;
+       }
+       
+       /*push element x into the stack*/
+       void push(int x){
+             s.push(x);
+       }
+};
