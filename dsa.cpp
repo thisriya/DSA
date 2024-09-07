@@ -757,3 +757,24 @@ class Solution{
              s.push(x);
        }
 };
+
+
+// SORT A STACK
+void SortedStack :: sort()
+{
+   stack<int> stk;
+   while(!s.empty()){
+       int t=s.top();
+       s.pop();
+   
+   while(!stk.empty() && stk.top()<t){
+       s.push(stk.top());
+       stk.pop();
+   }
+   stk.push(t);
+   }
+  while (!stk.empty()) {
+        s.push(stk.top());
+        stk.pop();
+    }
+}
