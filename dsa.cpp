@@ -790,4 +790,9 @@ def checkOddEven(x):
         return False
 
 
-// 
+//  IF ELIF CONDITIONAL STATEMENT
+def friends_in_trouble(j_angry, s_angry):
+    if j_angry == s_angry:  
+        return True
+    else:
+        return False
