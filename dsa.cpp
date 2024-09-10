@@ -778,3 +778,16 @@ void SortedStack :: sort()
         stk.pop();
     }
 }
+
+
+// MARK EVEN ODD IN PYTHON
+
+def checkOddEven(x):
+    if(x % 2 == 0):
+      return True
+    else:
+        # Complete the statement below
+        return False
+
+
+// 
