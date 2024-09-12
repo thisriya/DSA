@@ -810,3 +810,8 @@ def check_status(a, b, flag):
 def multiplicationTable(N):## in is a membership operator that is true if something is a member of sequence
     for i in range(1,11): 
         print(i * N, end=" ") 
+
+// PRINT ALTERNATIVE CHARACTERS OF STRING
+def stringJumper(str):
+    for i in range(0, len(str) , 2): ## from 0 to length of str and skip 2
+        print(str[i], end="")
