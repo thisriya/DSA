@@ -797,7 +797,7 @@ def friends_in_trouble(j_angry, s_angry):
     else:
         return False
 
-// CHECKING STATUS
+// CHECKING STATUS IN PYTHON
 def check_status(a, b, flag):
     if ((a >= 0) != (b >= 0)) and not flag:
         return True
@@ -805,3 +805,8 @@ def check_status(a, b, flag):
         return True
     else:
         return False
+
+// MULTIPLICATION TABLE IN PYTHON
+def multiplicationTable(N):## in is a membership operator that is true if something is a member of sequence
+    for i in range(1,11): 
+        print(i * N, end=" ") 
