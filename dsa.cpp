@@ -836,3 +836,18 @@ def titleIt(str):
 
 def casesSwap(str):
     return str.swapcase()
+
+
+// SQUARES DIFF (1+2)^2 - 1^2+ 2^2 POSITIVE VALUE
+class Solution:
+    def squaresDiff (self, N):
+        sum=0
+        s=0
+        for i in range(1,N+1):
+            sum= sum+i
+            s= s+ i*i
+        
+        sqr=sum*sum
+        ans=sqr-s
+        absolute_ans = abs(ans)
+        return absolute_ans
