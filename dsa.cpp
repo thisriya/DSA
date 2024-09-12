@@ -815,3 +815,11 @@ def multiplicationTable(N):## in is a membership operator that is true if someth
 def stringJumper(str):
     for i in range(0, len(str) , 2): ## from 0 to length of str and skip 2
         print(str[i], end="")
+
+// CHECK IF STRING STARTS AND ENDS WITH GFG
+def gfg(S):
+    b = S.lower()
+    if(b.startswith("gfg") and b.endswith("gfg")):  
+        print ("Yes")
+    else:
+        print ("No")
