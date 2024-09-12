@@ -796,3 +796,12 @@ def friends_in_trouble(j_angry, s_angry):
         return True
     else:
         return False
+
+// CHECKING STATUS
+def check_status(a, b, flag):
+    if ((a >= 0) != (b >= 0)) and not flag:
+        return True
+    elif a < 0 and b < 0 and flag:
+        return True
+    else:
+        return False
