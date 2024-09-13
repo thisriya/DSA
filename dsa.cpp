@@ -851,3 +851,13 @@ class Solution:
         ans=sqr-s
         absolute_ans = abs(ans)
         return absolute_ans
+
+// OPERATIONS IN SETS IN PYTHON
+def insert(S, element):
+    S.add(element)
+    
+def remove_from_set(S, element):
+    S.remove(element)
+    
+def sum_set(S):
+    return sum(S)
