@@ -885,3 +885,33 @@ class Solution {
         else return "No";
     }
 }
+
+// STRONG NUMBER WHERE THE SUM OF FACTORIAL OF DIGITS IS EQUAL TO NUMBER
+    int fac(int n){
+	        int f=1;
+	        if(n==0 || n==1){
+	            return 1;
+	        }
+	        
+	        for(int i=1;i<=n;i++){
+	            f=f*i;
+	        }
+	        return f;
+	    }
+	    
+		int is_StrongNumber(int n)
+		{
+		    int m=n,dig,factorial,sum=0;
+		    while(m!=0){
+		        dig=m%10;
+		        factorial=fac(dig);
+		        sum=sum+factorial;
+		        m=m/10;
+		    }
+		   if(sum==n){
+		       return 1;
+		   }
+		   else{
+		       return 0;
+		   }
+		}
