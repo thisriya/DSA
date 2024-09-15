@@ -869,3 +869,19 @@ def printInDecreasing(x):
     while(x >= 0):
         print(x,end=" ")
         x -= 1
+
+
+// PRIME IN JAVA
+class Solution {
+    public static String isPrime(int n) {
+        int f=-1;
+        if(n==1 || n==0) return "No";
+        for(int i=2;i<n;i++){
+            if(n%i==0){
+                f=1;
+            }
+        }
+        if(f==-1)  return "Yes";
+        else return "No";
+    }
+}
