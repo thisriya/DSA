@@ -861,3 +861,11 @@ def remove_from_set(S, element):
     
 def sum_set(S):
     return sum(S)
+
+
+// PRINT IN DESCENDING ORDER
+def printInDecreasing(x):
+    # Complete the code below
+    while(x >= 0):
+        print(x,end=" ")
+        x -= 1
