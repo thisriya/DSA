@@ -915,3 +915,31 @@ class Solution {
 		       return 0;
 		   }
 		}
+
+
+// PRIME SUM BETWEEN SPECIFIC RANGE
+class Solution {
+  public:
+  
+     bool isPrime(int n) {
+        if (n <= 1) return false;
+        for (int i = 2; i * i <= n; i++) {
+            if (n % i == 0) return false;
+        }
+        return true;
+    }
+    
+    long long getPPS(int a, int b) {
+        long long sum=0;
+        vector<int> primes;
+        for(int i=a;i<=b;i++){
+            if(isPrime(i)){
+                primes.push_back(i);
+            }
+        }
+        for(int i=0;i<primes.size();i++){
+            sum=sum+primes[i];
+        }
+        return sum;
+    }
+};
