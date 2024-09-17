@@ -943,3 +943,16 @@ class Solution {
         return sum;
     }
 };
+
+
+// ZERO CONVERTER PYTHON
+def pos(n):
+    while(n!=0):
+        print(n-1,end=" ")
+        n=n-1
+        
+    
+def neg(n):
+    while n<=0:
+        print(n,end=" ")
+        n=n+1
