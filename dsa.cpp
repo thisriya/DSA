@@ -956,3 +956,16 @@ def neg(n):
     while n<=0:
         print(n,end=" ")
         n=n+1
+
+
+// SUM OF SQUARE OF ODD NUMBERS
+long long int sum_of_square_oddNumbers(long long int n)
+{		
+long long int sum=0;
+for(long long int i=1;i<=2*n;i++){
+if(i%2!=0){
+  sum=sum+ (i*i);
+   }
+}
+return sum;
+}
