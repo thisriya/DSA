@@ -969,3 +969,20 @@ if(i%2!=0){
 }
 return sum;
 }
+
+
+// PRODUCT OF FACTOR OF NUMBER
+    def factorProduct(self, N: int) -> int:
+        MOD = 10**9 + 7
+        product = 1
+        
+        # Loop to find all factors
+        for i in range(1, int(N**0.5) + 1):
+            if N % i == 0:
+                # i is a factor
+                product = (product * i) % MOD
+                # N // i is also a factor
+                if i != N // i:  # Avoid double counting when i and N // i are the same
+                    product = (product * (N // i)) % MOD
+        
+        return product
