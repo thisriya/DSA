@@ -986,3 +986,23 @@ return sum;
                     product = (product * (N // i)) % MOD
         
         return product
+
+// FIBONACCI SERIES
+    const int MOD=1000000007;
+    vector<int> Series(int n) {
+    vector<int> result;
+    vector<long long> fib(n + 1); 
+    if (n >= 1) fib[0] = 0; // Fib(0) = 0
+    if (n >= 2) fib[1] = 1; // Fib(1) = 1
+
+    if (n >= 1) result.push_back(fib[0]); 
+    if (n >= 2) result.push_back(fib[1]);
+
+    for (int i = 2; i <= n; i++) {
+        fib[i] = (fib[i - 1] + fib[i - 2]) % MOD; // Ensure mod operation
+        result.push_back(fib[i]);
+    }
+
+    return result;
+    }
+
