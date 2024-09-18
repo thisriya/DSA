@@ -1010,3 +1010,16 @@ vector<int> Series(int n) {
     return result;
     }
 
+
+// MIDDLE OF ELEMENTS
+   int middle(int A, int B, int C){
+    if ((A <= B && B <= C) || (C <= B && B <= A)) {
+        return B;
+    }
+    if ((B <= A && A <= C) || (C <= A && A <= B)) {
+        return A;
+    }
+    if ((A <= C && C <= B) || (B <= C && C <= A)) {
+        return C;
+    }
+    }
