@@ -1071,3 +1071,19 @@ void volume(int l, int b, int h)
     double v=l*b*h;
     cout<<v<<endl;
 }
+
+
+// SEARCHING IN MATRIX
+	int matSearch (vector <vector <int>> &mat, int N, int M, int X)
+	{
+	    int ans=0;
+	    for(int i=0;i<N;i++){
+	        for(int j=0;j<M;j++){
+	            if(mat[i][j]==X){
+	                ans=1;
+	                break;
+	            }
+	        }
+	    }
+	    return ans;
+	}
