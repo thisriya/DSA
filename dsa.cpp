@@ -1104,3 +1104,30 @@ void volume(int l, int b, int h)
         }
         return ans;
     }
+
+
+//  FIRST AND LAST OCCURRENCE OF X
+    vector<int> firstAndLast(int x, vector<int> &arr) {
+        vector<int> result;
+        int f=-1,l=-1;
+        for(int i=0;i<arr.size();i++){
+            if(arr[i]==x){
+                f=i;
+                break;
+            }
+        }
+        for(int i=0;i<arr.size();i++){
+            if(arr[i]==x){
+                l=i;
+            }
+        }
+        if(l>=0 && f>=0){
+        result.push_back(f);
+        result.push_back(l);
+        return result;
+        }
+        else{
+        return {-1};
+            
+        }
+    }
