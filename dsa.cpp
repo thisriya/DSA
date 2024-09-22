@@ -1050,3 +1050,24 @@ class CuboidVol: public Cuboid
         cout<<volume<<endl;
     }
 };
+
+
+// FUNCTION OVERLOADING
+void volume(int s)
+{
+    double v=s*s*s;
+    cout<<v<<endl;
+}
+
+void volume(int r, int h)
+{
+    const double pi=3.14159;
+    double v= pi*r*r*h;
+    cout<<v<<endl;
+}
+
+void volume(int l, int b, int h)
+{
+    double v=l*b*h;
+    cout<<v<<endl;
+}
