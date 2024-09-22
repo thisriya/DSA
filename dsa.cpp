@@ -1087,3 +1087,20 @@ void volume(int l, int b, int h)
 	    }
 	    return ans;
 	}
+
+
+// FIND THE ELEMENT APPEARING ONCE IN SORTED ARRAY
+    int findOnce(int arr[], int n)
+    {
+        map<int,int> result;
+        for(int i=0;i<n;i++){
+            result[arr[i]]++;
+        }
+        int ans;
+        for(auto itr: result){
+            if(itr.second==1){
+                ans=itr.first;
+            }
+        }
+        return ans;
+    }
