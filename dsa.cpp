@@ -1023,3 +1023,30 @@ vector<int> Series(int n) {
         return C;
     }
     }
+
+
+// FIND THE VOLUME OF THE CUBOID USING CLASS
+class Cuboid 
+{
+   protected:
+     int l,w,h;
+   public:
+       void display() {
+        cout << l << " " << w << " " << h << endl;
+    }
+};
+
+class CuboidVol: public Cuboid
+{
+    public:
+     void read_input(int length,int width,int height){
+         l=length;
+         w=width;
+         h=height;
+         }
+         
+     void display() {
+        int volume=l*w*h;
+        cout<<volume<<endl;
+    }
+};
