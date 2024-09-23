@@ -1145,3 +1145,13 @@ void volume(int l, int b, int h)
         }
         return c;
     }
+
+
+// PRINT RECURSIVELY
+    void printGfg(int N) {
+    if (N == 0) {
+        return;  // Base case to stop recursion
+    }
+        cout<<"GFG"<<" ";
+        printGfg(N-1);
+    }
