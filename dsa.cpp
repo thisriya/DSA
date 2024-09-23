@@ -1131,3 +1131,17 @@ void volume(int l, int b, int h)
             
         }
     }
+
+
+// BUILDING FACING SUN
+    int countBuildings(vector<int> &height) {
+        int c=1;
+        int maxh=height[0];
+        for(int i=1;i<height.size();i++){
+            if(height[i]>maxh){
+                c++;
+                maxh=height[i];
+            }
+        }
+        return c;
+    }
