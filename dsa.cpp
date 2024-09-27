@@ -1257,3 +1257,22 @@ bool search(Node* root, int x) {
         }
     }
 }
+
+// ELEMENT AT PARTICLUAR INDEX
+class Solution {
+  public:
+    int GetNth(Node *head, int index) {
+        if(head==nullptr){
+            return -1;
+        }
+        int i=1;
+        while(head!=nullptr){
+             if(i==index){
+                return head->data;
+            }
+            head=head->next;
+            i++;
+        }
+        return -1;
+    }
+};
