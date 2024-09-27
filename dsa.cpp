@@ -1219,3 +1219,22 @@ class Solution
     }
 
 };
+
+
+// CHECK FOR BST
+      bool isBSTUtil(Node* root, int minVal, int maxVal) {
+        if (root == nullptr) {
+            return true;
+        }
+
+        if (root->data < minVal || root->data > maxVal) {
+            return false;
+        }
+
+        // Recursively check the left and right subtrees
+        return isBSTUtil(root->left, minVal, root->data - 1) && 
+               isBSTUtil(root->right, root->data + 1, maxVal);
+    }
+    bool isBST(Node* root) {
+      return isBSTUtil(root, INT_MIN, INT_MAX);
+    }
