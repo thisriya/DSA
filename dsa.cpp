@@ -1238,3 +1238,22 @@ class Solution
     bool isBST(Node* root) {
       return isBSTUtil(root, INT_MIN, INT_MAX);
     }
+
+
+// SEARCH IN BST
+bool search(Node* root, int x) {
+    if(root==nullptr){
+        return false;
+    }
+    while(root!=nullptr){
+        if(x<root->data){
+            root=root->left;
+        }
+        else if(x>root->data){
+            root=root->right;
+        }
+        else{
+            return true;
+        }
+    }
+}
