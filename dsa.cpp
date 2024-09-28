@@ -1276,3 +1276,20 @@ class Solution {
         return -1;
     }
 };
+
+
+// FIRST REPEATING ELEMENT
+    char firstRep (string s)
+    {
+      map<char,int> result;
+      for(char num:s){
+          result[num]++;
+      }
+      
+      for(char c:s){
+          if(result[c]>1){
+              return c;
+          }
+      }
+      return '#';
+    }
