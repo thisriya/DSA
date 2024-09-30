@@ -1293,3 +1293,53 @@ class Solution {
       }
       return '#';
     }
+
+
+// MERGE 2 BST TREES
+class Solution {
+  public:
+  
+       vector<int> mergeSortedArrays(const vector<int>& list1, const vector<int>& list2) {
+        vector<int> merged;
+        int i = 0, j = 0;
+        while (i < list1.size() && j < list2.size()) {
+            if (list1[i] <= list2[j]) {
+                merged.push_back(list1[i]);
+                i++;
+            } else {
+                merged.push_back(list2[j]);
+                j++;
+            }
+        }
+        // Add remaining elements from list1, if any
+        while (i < list1.size()) {
+            merged.push_back(list1[i]);
+            i++;
+        }
+        // Add remaining elements from list2, if any
+        while (j < list2.size()) {
+            merged.push_back(list2[j]);
+            j++;
+        }
+        return merged;
+    }
+    
+       void inorder(Node* root, vector<int>& result) {
+        if (root == nullptr)
+            return;
+        inorder(root->left, result);
+        result.push_back(root->data);
+        inorder(root->right, result);
+    }
+    
+    
+    vector<int> merge(Node *root1, Node *root2) {
+        vector<int> list1, list2;
+        // Perform inorder traversal of both trees
+        inorder(root1, list1);
+        inorder(root2, list2);
+        // Merge the two sorted lists
+        return mergeSortedArrays(list1, list2);
+    
+    }
+};
