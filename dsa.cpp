@@ -1370,3 +1370,19 @@ class Solution {
 
         return result;
     }
+
+// ROTATE AND DELETE
+ int rotateDelete(vector<int> &arr) {
+    int n=arr.size();  
+    int opr=n/2;     
+
+    for (int i=1;i<=opr;i++) {
+        int lastElement=arr.back(); 
+        arr.pop_back();              
+        arr.insert(arr.begin(),lastElement); 
+        int delIndex=arr.size()-i;  
+        arr.erase(arr.begin()+delIndex);  
+    }
+
+    return arr[0];
+    }
