@@ -1343,3 +1343,30 @@ class Solution {
     
     }
 };
+
+
+// MAJORITY VOTE GREATER THEN N/3
+  vector<int> findMajority(vector<int>& nums) {
+        vector<int> result;
+        int n=nums.size();
+        map<int,int> r;
+    if (n == 0) {
+        result.push_back(-1);
+        return result;
+    }
+        for(int i=0;i<n;i++){
+            r[nums[i]]++;
+        }
+        int threshhold=n/3;
+        for(auto it : r){
+            if(it.second>threshhold){
+                result.push_back(it.first);
+            }
+        }
+        
+        if(result.empty()){
+        result.push_back(-1);
+    }
+
+        return result;
+    }
