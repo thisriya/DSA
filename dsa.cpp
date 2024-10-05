@@ -1434,3 +1434,16 @@ class Solution {
         
         return dummy->next;
     }
+
+
+//  SMALLEST NATURAK NUMBER NOT HAVING SUBSET OF SAME SUM 
+    long long findSmallest(vector<int> &arr) {
+        long long result=1;
+        for(int i=0;i<arr.size();i++){
+            if(arr[i]>result){
+                break;
+              }
+               result=result+arr[i];
+        }
+        return result;
+    }
