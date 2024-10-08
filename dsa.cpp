@@ -1447,3 +1447,13 @@ class Solution {
         }
         return result;
     }
+
+
+// MINIMUM NUMBER IN SORTED ARRAY
+ int minNumber(int arr[], int low, int high)
+    {
+        int ans;
+        sort(arr+low,arr+high+1); 
+        ans=arr[0];
+        return ans;
+    }
