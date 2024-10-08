@@ -1468,3 +1468,18 @@ class Solution {
          ans=n1+n2;
          return ans;
     }
+
+
+// ELEMENTS REPEATED TWO TIMES
+   vector<int> twoRepeated(int n, int arr[]) {
+       vector<int> result;
+       unordered_map<int,int> ans;
+       for(int i=0;i<n+2;i++){
+           ans[arr[i]]++;
+           if(ans[arr[i]]==2){
+               result.push_back(arr[i]);
+           }
+       }
+     
+       return result;
+    }
