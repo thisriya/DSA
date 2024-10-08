@@ -1457,3 +1457,14 @@ class Solution {
         ans=arr[0];
         return ans;
     }
+
+
+// PAIRSUM OF DISTINCT NUMBERS MAXIMUM
+    int pairsum(vector<int> &arr) {
+         int ans;
+         sort(arr.begin(),arr.end());
+         int n1=arr[arr.size()-1];
+         int n2=arr[arr.size()-2];
+         ans=n1+n2;
+         return ans;
+    }
