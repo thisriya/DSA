@@ -1529,3 +1529,20 @@ class Solution {
         return nodes[0][0];   
     }
 };
+
+
+// MAXIMUM DISTANCE BETWEEN ELEMENTS
+    int maxDistance(vector<int> &arr) {
+        unordered_map<int,int> result;
+       int d=0;
+       for(int i=0;i<arr.size();i++){
+           if(result.find(arr[i])==result.end()){
+               result[arr[i]]=i;
+           }
+           else{
+               int dist=i-result[arr[i]];
+               d=max(dist,d);
+           }
+       }
+       return d;
+    }
