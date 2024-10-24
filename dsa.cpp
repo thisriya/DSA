@@ -1546,3 +1546,30 @@ class Solution {
        }
        return d;
     }
+
+
+// MODIFY THE ARRAY(Given an array arr. Return the modified array in such a way that 
+//if the current and next numbers are valid numbers and are equal then double the current number 
+//value and replace the next number with 0. After the modification,
+//rearrange the array such that all 0's are shifted to the end.)
+    vector<int> modifyAndRearrangeArray(vector<int> &arr) {
+       vector<int> result;
+       for(int i=0;i<arr.size();i++){
+           if(arr[i]==arr[i+1]){
+               arr[i]=arr[i]*2;
+               arr[i+1]=0;
+           }
+       }
+    int n=arr.size();
+    int index=0;
+    for (int i=0;i<n;i++) {
+        if (arr[i]!=0) {
+            arr[index++]=arr[i];
+        }
+    }
+    
+    while (index<n) {
+        arr[index++]=0;
+    }
+       return arr;
+    }
