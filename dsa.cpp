@@ -1573,3 +1573,15 @@ class Solution {
     }
        return arr;
     }
+
+// OCCURENCE OF INTEGER IN LINKED LIST
+    int count(struct Node* head, int key) {
+        int c=0;
+        while(head!=nullptr){
+            if(head->data==key){
+                c++;
+            }
+            head=head->next;
+        }
+        return c;
+    }
