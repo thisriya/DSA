@@ -1585,3 +1585,25 @@ class Solution {
         }
         return c;
     }
+
+//SWAP AND FIND MAXIMUM ABSOLUTE SUM
+    long long maxSum(vector<int>& arr) {
+    long long ans=0;
+    int n=arr.size();
+    sort(arr.begin(), arr.end());
+    vector<int> temp(n);
+    int left = 0, right = n - 1;
+    
+    // Fill the temp array with min-max arrangement
+    for (int i=0;i<n;i++) {
+        temp[i]=(i%2==0) ? arr[left++] : arr[right--];
+    }
+    
+    // Calculate the maximum sum of absolute differences in circular arrangement
+    for (int i=0;i<n-1;i++) {
+        ans=ans+abs(temp[i]-temp[i + 1]);
+    }
+    ans=ans+abs(temp[n - 1]-temp[0]); // To account for the circular nature
+
+    return ans;
+    }
