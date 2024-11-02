@@ -1607,3 +1607,39 @@ class Solution {
 
     return ans;
     }
+
+
+// CHECK IF NUMBER IS DUPLICATE AND IT LIES WITHIN THE KTH DISTANCE
+class Solution {
+  public:
+
+    bool checkDuplicatesWithinK(vector<int>& arr, int k) {
+    // bool ans=false;
+    // unordered_map<int,int> result;
+    // for(auto num:arr){
+    //     result[num]++;
+    // }
+    // for(auto i: result){
+    //     if(i.second>=2){
+    //         for(int j=result.find(i.first);j<k;j++){
+    //             if(i.second>=2)
+    //               ans=true;
+    //         }
+    //     }
+      
+    // }
+    // return ans;
+    
+    unordered_map<int, int> result;  // map to store the last seen index of each element
+        bool ans=false;
+        for (int i=0;i<arr.size();i++) {
+            int num = arr[i];
+            if (result.find(num)!=result.end() && i-result[num]<=k) {
+                ans=true;
+                break;
+            }
+            result[num]=i;
+        }
+        return ans;
+    }
+};
