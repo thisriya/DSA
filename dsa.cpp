@@ -1668,3 +1668,15 @@ class Solution {
         
         return sum;
     }
+
+
+//ARRAY TO LINKED LIST
+    Node* constructLL(vector<int>& arr) {
+        struct Node* head=new Node(arr[0]);
+        struct Node* node=head;
+        for(int i=1;i<arr.size();i++){
+                node->next=new Node(arr[i]);
+                node=node->next;
+           }
+        return head;
+    }
