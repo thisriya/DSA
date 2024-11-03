@@ -1680,3 +1680,21 @@ class Solution {
            }
         return head;
     }
+
+
+// FIND N/KTH TERM IN LINKED LIST
+    int fractional_node(struct Node *head, int k) {
+        struct Node* current=head;
+        int total=0,ans;
+        while(current!=nullptr){
+            current=current->next;
+            total++;
+        }
+       int pos=(total+k-1)/k;
+        current=head;
+        for(int i=1;i<pos;i++){
+            current=current->next;
+        }
+        ans=current->data;
+        return ans;
+    }
