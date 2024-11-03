@@ -1698,3 +1698,13 @@ class Solution {
         ans=current->data;
         return ans;
     }
+
+
+//INSERT ELEMENT AT THE STARTING OF LINKED LIST
+    Node *insertAtBegining(Node *head, int x) {
+        struct Node* newnode = (struct Node*)malloc(sizeof(struct Node));
+        newnode->data=x;
+        newnode->next=head;
+        return newnode;
+        
+    }
