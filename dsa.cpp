@@ -1643,3 +1643,28 @@ class Solution {
         return ans;
     }
 };
+
+// SUM OF LAST N NODES IN LINKED LIST
+    int sumOfLastN_Nodes(struct Node* head ,int n) {
+        int sum=0,total=0;
+        struct Node* current = head;
+        while(current!=nullptr){
+            total++;
+            current=current->next;
+        }
+        if(n>total) {
+           n=total;
+          }
+        current=head;
+        for (int i=0;i<total-n;i++) {
+            current = current->next;
+        }
+       
+        while(current!=nullptr){
+            sum=sum+current->data;
+            current=current->next;
+            
+        }
+        
+        return sum;
+    }
