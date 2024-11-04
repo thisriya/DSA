@@ -1729,3 +1729,29 @@ class Solution {
        }
        return result;
     }
+
+
+// WIINER OF THE COTE LEXICOGRAPHICALLY
+    vector<string> winner(string arr[],int n)
+    {
+      vector<string> ans;
+      unordered_map<string,int> result;
+      for (int i = 0; i < n; i++) {
+        result[arr[i]]++;
+    }
+
+      int maxi=0,vote;
+      string name;
+      for(auto i: result){
+          if(i.second>maxi  || (i.second==maxi && (name.empty() || i.first<name))){
+              maxi=i.second;
+              name=i.first;
+          }
+        //   else if(i.second==maxi &&  i.first<name){
+        //       name=i.first;
+        //   }
+      }
+      ans.push_back(name);
+      ans.push_back(to_string(maxi));
+      return ans;
+    }
