@@ -1755,3 +1755,30 @@ class Solution {
       ans.push_back(to_string(maxi));
       return ans;
     }
+
+
+// UNCOMMON CHARACTERS IN 2 STRINGS USING SET
+        string UncommonChars(string A, string B)
+        {
+            string s="";
+            unordered_set<char> seta(A.begin(),A.end());
+            unordered_set<char> setb(B.begin(),B.end());
+            for(char ch:seta){
+                if(setb.find(ch)==setb.end()){
+                    s=s+ch;
+                }
+            }
+            
+              for(char ch:setb){
+                if(seta.find(ch)==seta.end()){
+                    s=s+ch;
+                }
+            }
+            sort(s.begin(),s.end());
+            if(!s.empty()){
+            return s;
+            }
+            else{
+                return "-1";
+            }
+        }
