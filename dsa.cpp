@@ -1708,3 +1708,24 @@ class Solution {
         return newnode;
         
     }
+
+
+// TRIPLETS HAVIND SUM OF 0
+    vector<vector<int>> findTriplets(vector<int> &arr) {
+       vector<vector<int>> result;
+        for (int i=0;i<arr.size()-2;i++) {
+        if (i>0 && arr[i]==arTr[i-1]) {
+            continue;
+        }
+        }
+       for(int i=0;i<arr.size()-2;i++){
+           for(int j=i+1;j<arr.size()-1;j++){
+               for(int k=j+1;k<arr.size();k++){
+                   if(arr[i]+arr[j]+arr[k]==0){
+                       result.push_back({i,j,k});
+                   }
+               }
+           }
+       }
+       return result;
+    }
