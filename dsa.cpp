@@ -1812,3 +1812,16 @@ string firstRepChar(string s)
   
         return "-1";
 }
+
+
+// CHECKING FOR FASCINATING NUMBER THE SUM OF NUMBER,NUMBER*2,NUMBER*3 IS CONCATENATED AND SHOULD HAVE ALL NUMBERS FROM 1 TO 9
+    bool fascinating(int n) {
+        
+        int twomul,threemul;
+        string sum;
+        twomul=n*2;
+        threemul=n*3;
+        sum=to_string(n)+to_string(twomul)+to_string(threemul);
+        sort(sum.begin(),sum.end());
+        return sum=="123456789";
+    }
