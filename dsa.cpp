@@ -1795,3 +1795,20 @@ void rotate(vector<vector<int> >& mat) {
         reverse(mat[i].begin(),mat[i].end());
     }
 }
+
+
+// FIRST REPEATED CHARACTER
+
+string firstRepChar(string s)
+{
+    unordered_set<char> seta;
+    string ans;
+    for(char ch: s){
+        if(seta.find(ch)!=seta.end()){
+            return string(1,ch);
+        }
+        seta.insert(ch);
+    }
+  
+        return "-1";
+}
