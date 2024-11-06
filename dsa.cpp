@@ -1825,3 +1825,22 @@ string firstRepChar(string s)
         sort(sum.begin(),sum.end());
         return sum=="123456789";
     }
+
+
+// SUM OF ALL THE PATHS TO LEAF NODES(NOT DATA PRESENT)
+    int sum(Node *root,int s){
+        if(root==nullptr){
+            return 0;
+        }
+        
+        s=s*10+root->data;
+        if(root->right==nullptr && root->left==nullptr){
+            return s;
+        }
+        int ls=sum(root->left,s);
+        int rs=sum(root->right,s);
+        return ls+rs;
+    }
+    int treePathsSum(Node *root) {
+        return sum(root,0);
+    }
