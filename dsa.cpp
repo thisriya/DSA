@@ -1844,3 +1844,47 @@ string firstRepChar(string s)
     int treePathsSum(Node *root) {
         return sum(root,0);
     }
+
+
+// SPLITING INTO THREE SUBARRAYS
+    vector<int> findSplit(vector<int>& arr) {
+    int totalSum = 0;
+    for (int num : arr) {
+        totalSum += num;
+    }
+
+    // If total sum is not divisible by 3, return {-1, -1}
+    if (totalSum % 3 != 0) {
+        return {-1, -1};
+    }
+
+    int targetSum = totalSum / 3;
+    int currentSum = 0;
+    int foundParts = 0;
+    int i = -1, j = -1;
+
+    // Traverse the array to find i and j
+    for (int k = 0; k < arr.size(); k++) {
+        currentSum += arr[k];
+
+        // Check if we found one part with sum = targetSum
+        if (currentSum == targetSum) {
+            foundParts++;
+            currentSum = 0;
+
+            // Assign indices for i and j
+            if (foundParts == 1) {
+                i = k;
+            } else if (foundParts == 2) {
+                j = k;
+                break;
+            }
+        }
+    }
+
+    // If we found both i and j
+    if (foundParts == 2) {
+        return {i, j};
+    }
+    return {-1, -1};
+    }
