@@ -1888,3 +1888,12 @@ string firstRepChar(string s)
     }
     return {-1, -1};
     }
+
+// UNION OF 2 SETS IN ASCENDING ORDER
+    vector<int> findUnion(vector<int> &a, vector<int> &b) {
+        set<int> s1(a.begin(),a.end());
+        set<int> s2(b.begin(),b.end());
+        vector<int> result;
+        set_union(s1.begin(),s1.end(),s2.begin(),s2.end(),back_inserter(result));
+        return result;
+    }
