@@ -1897,3 +1897,26 @@ string firstRepChar(string s)
         set_union(s1.begin(),s1.end(),s2.begin(),s2.end(),back_inserter(result));
         return result;
     }
+
+
+// FIND TWO ELEMENTS FIRST THE REPEATING ONE AND AND SECOND IS THE MISSING NUMBER
+    vector<int> findTwoElement(vector<int>& arr) {
+        vector<int> result;
+        unordered_map<int,int> r;
+        for(int num : arr){
+           r[num]++;    
+        }
+        for(const auto& i: r){
+            if(i.second==2){
+                result.push_back(i.first);
+            }
+        }
+        
+        for (int i=1;i<=arr.size();i++) {
+        if (r.find(i)==r.end()) {
+            result.push_back(i); 
+            break;
+        }
+    }
+        return result;
+    }
