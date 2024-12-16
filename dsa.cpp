@@ -1920,3 +1920,18 @@ string firstRepChar(string s)
     }
         return result;
     }
+
+// FIRST ELEMENT KTH TIME
+    int firstElementKTime(vector<int>& arr, int k) {
+        int ans;
+        int n=arr.size();
+        unordered_map<int,int> result;
+        for(int num:arr){
+            result[num]++;
+            if(result[num]>=k){
+                return num;
+            }
+        }
+       return -1;
+    
+    }
